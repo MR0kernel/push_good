@@ -6,13 +6,13 @@
 #    By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 07:41:37 by guilrodr          #+#    #+#              #
-#    Updated: 2024/02/01 09:39:02 by guilrodr         ###   ########lyon.fr    #
+#    Updated: 2024/02/01 19:35:57 by guilrodr         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3 #-fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 SRC = main.c \
 		0_error_handler/general_error_handler.c \
@@ -36,19 +36,20 @@ SRC = main.c \
 		4_operations/sort_three.c \
 		4_operations/sort_two.c \
 		minilib/ft_atoi.c \
-		minilib/ft_putstr_fd.c \
+		minilib/ft_putstr_fd.c
 
 OBJS = $(SRC:.c=.o)
-
-all:	$(NAME)
-
-%.o: %.c include/push_swap.h
-	@$(CC) $(CC_FLAGS) -I ./include -c $< -o $@
 
 $(NAME): $(OBJS)
 	@$(CC) ${CFLAGS} $(OBJS) -o $@
 	@echo "Program compiled.\nLaunch with the following command :"
 	@echo "./push_swap <list of integers>"
+
+all:	$(NAME)
+
+%.o:%.c includes/push_swap.h Makefile
+	@echo "Compiling $<..."
+	@$(CC) $(CC_FLAGS) -I ./includes -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS)

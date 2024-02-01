@@ -6,7 +6,7 @@
 /*   By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:09:21 by guilrodr          #+#    #+#             */
-/*   Updated: 2024/02/01 11:16:56 by guilrodr         ###   ########lyon.fr   */
+/*   Updated: 2024/02/01 19:37:15 by guilrodr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	basic_error_handler(t_stack *stack, t_utils *utils, ssize_t error_code)
 	{
 		if (utils->numbers)
 			free(utils->numbers);
-
 		free(utils);
 	}
 	exit(1);
