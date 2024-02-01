@@ -6,7 +6,7 @@
 #    By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 07:41:37 by guilrodr          #+#    #+#              #
-#    Updated: 2024/01/31 16:10:02 by guilrodr         ###   ########lyon.fr    #
+#    Updated: 2024/02/01 09:39:02 by guilrodr         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,16 +38,28 @@ SRC = main.c \
 		minilib/ft_atoi.c \
 		minilib/ft_putstr_fd.c \
 
-all:		$(NAME)
+OBJS = $(SRC:.c=.o)
 
-$(NAME): $(SRC) includes/push_swap.h
-	$(CC) ${CFLAGS} $(SRC) -o $(NAME)
+all:	$(NAME)
+
+%.o: %.c include/push_swap.h
+	@$(CC) $(CC_FLAGS) -I ./include -c $< -o $@
+
+$(NAME): $(OBJS)
+	@$(CC) ${CFLAGS} $(OBJS) -o $@
+	@echo "Program compiled.\nLaunch with the following command :"
+	@echo "./push_swap <list of integers>"
 
 clean:
-	$(RM) $(NAME)
+	@$(RM) $(OBJS)
+	@echo "Object files deleted."
 
 fclean:	clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "Executable file deleted."
 
-re:		fclean all
+re:		fclean
+	@echo "Making again..."
+	@make all
+
 .PHONY: all clean fclean re
