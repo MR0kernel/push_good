@@ -6,7 +6,7 @@
 /*   By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:03:42 by guilrodr          #+#    #+#             */
-/*   Updated: 2024/01/31 13:49:09 by guilrodr         ###   ########lyon.fr   */
+/*   Updated: 2024/02/01 10:16:47 by guilrodr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	pa(t_stack *stack)
 	ssize_t	index;
 
 	index = stack->size_a;
+	if (stack->size_b < 1)
+		return ;
 	while (index > 0)
 	{
 		stack->stack_a[index] = stack->stack_a[index - 1];

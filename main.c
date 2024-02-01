@@ -6,7 +6,7 @@
 /*   By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 08:57:50 by guilrodr          #+#    #+#             */
-/*   Updated: 2024/01/31 20:45:59 by guilrodr         ###   ########lyon.fr   */
+/*   Updated: 2024/02/01 10:36:45 by guilrodr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv)
 	set_max(stack);
 	set_min(stack);
 	sort_master(stack);
+	print_stack_a_and_b(stack);
 	clean_exit(stack, utils);
 	return (0);
 }

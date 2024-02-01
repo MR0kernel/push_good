@@ -6,7 +6,7 @@
 /*   By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:04:02 by guilrodr          #+#    #+#             */
-/*   Updated: 2024/01/31 13:49:09 by guilrodr         ###   ########lyon.fr   */
+/*   Updated: 2024/02/01 10:17:00 by guilrodr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	pb(t_stack *stack)
 	ssize_t	index;
 
 	index = stack->size_b;
+	if (stack->size_a < 1)
+		return ;
 	while (index > 0)
 	{
 		stack->stack_b[index] = stack->stack_b[index - 1];

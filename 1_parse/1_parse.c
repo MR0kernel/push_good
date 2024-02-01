@@ -6,12 +6,11 @@
 /*   By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 08:55:51 by guilrodr          #+#    #+#             */
-/*   Updated: 2024/01/31 20:54:00 by guilrodr         ###   ########lyon.fr   */
+/*   Updated: 2024/02/01 10:35:49 by guilrodr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-#include <stdio.h>
 
 static ssize_t	total_numbers_count(t_stack *stack, t_utils *utils)
 {

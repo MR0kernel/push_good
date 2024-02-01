@@ -6,7 +6,7 @@
 /*   By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 11:04:13 by guilrodr          #+#    #+#             */
-/*   Updated: 2024/01/31 13:49:09 by guilrodr         ###   ########lyon.fr   */
+/*   Updated: 2024/02/01 10:17:50 by guilrodr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ra(t_stack *stack)
 	ssize_t	tmp;
 
 	index = 0;
+	if (stack->size_a < 2)
+		return ;
 	tmp = stack->stack_a[0];
 	while (index < stack->size_a - 1)
 	{

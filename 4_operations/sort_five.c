@@ -6,13 +6,11 @@
 /*   By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 12:34:13 by tchorniy          #+#    #+#             */
-/*   Updated: 2024/01/31 20:21:19 by guilrodr         ###   ########lyon.fr   */
+/*   Updated: 2024/02/01 10:19:55 by guilrodr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-#include <stdio.h>
 
 void	sort_five(t_stack *stack)
 {
