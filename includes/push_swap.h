@@ -6,7 +6,7 @@
 /*   By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 07:55:53 by guilrodr          #+#    #+#             */
-/*   Updated: 2024/01/31 20:56:00 by guilrodr         ###   ########lyon.fr   */
+/*   Updated: 2024/02/01 11:07:34 by guilrodr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	sort_master(t_stack *stack);
 // minilib
 void	ft_putstr_fd(char *s, ssize_t fd);
 ssize_t	ft_atoi(const char *str);
-char	*rebuild(char *old, char c);
+char	*rebuild(t_stack *stack, t_utils *utils, char *old, char c);
 
 // operations
 void	pb(t_stack *stack);

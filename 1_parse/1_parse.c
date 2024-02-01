@@ -6,7 +6,7 @@
 /*   By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 08:55:51 by guilrodr          #+#    #+#             */
-/*   Updated: 2024/02/01 10:35:49 by guilrodr         ###   ########lyon.fr   */
+/*   Updated: 2024/02/01 11:08:59 by guilrodr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,17 @@ void	parse_input(t_stack *stack, t_utils *utils, ssize_t a, char **c)
 		len_str = len(stack, utils, c[i]);
 		while (y < len_str)
 		{
-			utils->numbers = rebuild(utils->numbers, ' ');
+			utils->numbers = rebuild(stack, utils, utils->numbers, ' ');
 			while (y < len_str && (c[i][y] == ' ' || \
 					c[i][y] == '\t' || c[i][y] == '\n'))
 				y++;
 			while (is_number(stack, utils, c[i], y))
-				utils->numbers = rebuild(utils->numbers, c[i][y++]);
+				utils->numbers = \
+				rebuild(stack, utils, utils->numbers, c[i][y++]);
 		}
 		i++;
 		if (i < a)
-			utils->numbers = rebuild(utils->numbers, ' ');
+			utils->numbers = rebuild(stack, utils, utils->numbers, ' ');
 	}
 	fix(utils->numbers);
 	stack->size_a = total_numbers_count(stack, utils);

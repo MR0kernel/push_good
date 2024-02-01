@@ -6,7 +6,7 @@
 /*   By: guilrodr <guilrodr@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 08:57:50 by guilrodr          #+#    #+#             */
-/*   Updated: 2024/02/01 11:00:30 by guilrodr         ###   ########lyon.fr   */
+/*   Updated: 2024/02/01 11:21:30 by guilrodr         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,20 @@ int	main(int argc, char **argv)
 	t_stack	*stack;
 	t_utils	*utils;
 
+	stack = NULL;
+	utils = NULL;
 	if (argc < 2)
 		return (0);
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	utils = (t_utils *)malloc(sizeof(t_utils));
 	init_all(stack, utils);
+	if (!stack || !utils)
+		basic_error_handler(stack, utils, 0);
 	parse_input(stack, utils, argc, argv);
 	stack->stack_a = (ssize_t *)malloc(sizeof(ssize_t) * stack->size_a);
 	stack->stack_b = (ssize_t *)malloc(sizeof(ssize_t) * stack->size_a);
+	if (!stack->stack_a || !stack->stack_b)
+		basic_error_handler(stack, utils, 0);
 	fill_stack_a(stack, utils, utils->numbers);
 	set_max(stack);
 	set_min(stack);
